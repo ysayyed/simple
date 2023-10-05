@@ -1,7 +1,12 @@
-const http = require('http')
-http.createServer((req, res) => {
-	res.write("Simple EC2 instance")
+const express = require('express')
+
+const app = express()
+
+app.get('/', (req, res) => {
+	res.send("Hello world!")
 	res.end()
-}).listen(80, () => {
-	console.log("Listening on http://127.0.0.1:80")
+})
+
+app.listen(3000, () => {
+	console.log("Server running!")
 })
